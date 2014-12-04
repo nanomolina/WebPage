@@ -1,1 +1,3 @@
 pip install Django
+# pip install django-grappelli
+pip install django-admin-bootstrapped
