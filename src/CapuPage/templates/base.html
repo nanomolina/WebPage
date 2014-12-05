@@ -1,106 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CapuWebPage">
-    <meta name="author" content="Nano Molina">
-    <title>CapuPage 1.0</title>
-    {% load staticfiles %}
-    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
-    {% load staticfiles %}
-    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
-    {% load staticfiles %}
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    {% load staticfiles %}
-    <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet">
-    {% load staticfiles %}
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
-    <!--[if IE]>
-    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CapuWebPage">
+  <meta name="author" content="Nano Molina">
+  <title>CapuPage 1.0</title>
+  {% load staticfiles %}
+  <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+  {% load staticfiles %}
+  <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+  {% load staticfiles %}
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  {% load staticfiles %}
+  <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet">
+  {% load staticfiles %}
+  <link href="{% static 'css/base.css' %}" rel="stylesheet">
+  {% block links %}{% endblock %}
+  <!--[if IE]>
+  <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
 <body>
-    <!--Fixed inverse navbar-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project Capu</a>
-        </div>
-
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</a>
-            </li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--.nav-collapse -->
-      </div>
-    </nav>
-
-    <!--Begin page content-->
+  <!--Fixed inverse navbar-->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-      <div class="starter-template">
-        <h1>Twitter Bootstrap es un framework o conjunto de herramientas de software libre para diseño de sitios y aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, cuadros, menús de navegación y otros elementos de diseño basado en HTML y CSS, así como, extensiones de JavaScript opcionales adicionales.
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Project Capu</a>
+      </div>
 
-Es el proyecto más popular en GitHub1 y es usado por la NASA y la MSNBC junto a demás organizaciones. Bootstrap fue desarrollado por Mark Otto y Jacbod Thornton de Twitter, como un marco de trabajo (framework) para fomentar la consistencia a través de herramientas internas. Antes de Bootstrap, se usaban varias librerías para el desarrollo de interfaces de usuario, las cuales guiaban a inconsistencias y a una carga de trabajo alta en su mantenimiento. Según el desarrollador de Twitter Mark Otto, frente a esos desafíos:
-
-    "...un pequeño grupo de desarrolladores y yo nos reunimos a diseñar y construir una nueva herramienta interna y vimos una oportunidad de hacer más. A través de ese proceso, nos vimos construir algo mucho más sustancial que otra herramienta interna más. Meses después, terminamos con una primera versión de Bootstrap como una manera de documentar y compartir bienes y patrones de diseño comunes dentro de la compañía."4
-
-El primer desarrollo en condiciones reales ocurrió durante la primera "Semana de Hackeo" (Hackweek) de Twitter."5 Mark Otto mostró a algunos colegas como acelerar el desarrollo de sus proyectos con la ayuda de la herramienta de trabajo. Como resultado, decenas de temas se han introducido en el marco de trabajo.
-
-En agosto del 2011, Twitter liberó a Bootstrap como código abierto. En febrero del 2012, se convirtió en el proyecto de desarrollo más popular de GitHub. Bootstrap tiene un soporte relativamente incompleto para HTML5 y CSS 3, pero es compatible con la mayoría de los navegadores web. La información básica de compatibilidad de sitios web o aplicaciones esta disponible para todos los dispositivos y navegadores. Existe un concepto de compatibilidad parcial que hace disponible la información básica de un sitio web para todos los dispositivos y navegadores. Por ejemplo, las propiedades introducidas en CSS3 para las esquinas redondeadas, gradientes y sombras son usadas por Bootstrap a pesar de la falta de soporte de navegadores antiguos. Esto extiende la funcionalidad de la herramienta, pero no es requerida para su uso.
-
-Desde la versión 2.0 también soporta diseños sensibles. Esto significa que el diseño gráfico de la página se ajusta dinámicamente, tomando en cuenta las características del dispositivo usado (Computadoras, tabletas, teléfonos móviles).
-
-Bootstrap es de código abierto y está disponible en GitHub. Los desarrolladores están motivados a participar en el proyecto y a hacer sus propias contribuciones a la plataforma.</h1>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active" id="home">
+            <a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</a>
+          </li>
+          <li id="about"><a href="#about">Acerca de</a></li>
+          <li id="contact" data-toggle="modal" data-target="#contactModal" data-whatever="@myaddress"><a href="#contact">Contacto</a></li>
+        </ul>
       </div>
     </div>
+  </nav>
+  <!--End Fixed inverse navbar-->
 
-    <!--Begin page footer-->
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-md-4 footnav">
-            <h3><span class="glyphicon glyphicon-plus" aria-hidden="true">&nbsp;Sobre:</span></h3>
-            <ul class="">
-              <li class=""><a href="#">Nosotros</a></li>
-              <li class=""><a href="#">Contacto</a></li>
-              <li class=""><a href="#">T&eacute;rminos de uso</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-6 col-md-4 footnav">
-            <h3><span class="glyphicon glyphicon-info-sign" aria-hidden="true">&nbsp;Info:</span></h3>
-            <ul class="">
-              <li class=""><a href="#">Horarios</a></li>
-            </ul>
-          </div>
+  <!--Contact Modal-->
+  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="contactModalLabel">Nuevo Mensaje</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="receiver-name" class="control-label">Destinatario:</label>
+              <input type="text" class="form-control" id="receiver-name">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Mensaje:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Enviar Mensaje</button>
         </div>
       </div>
-    </footer>
+    </div>
+  </div>
+  <!--End contact Modal-->
 
-    <!--Footer fixed-->
-    <section class="footer-fixed">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 column">&copy;2014 Capu Page</div> <!-- /.col-md-6 -->
-          <div class="col-md-6 column"><span style="float:right;">by Nano Molina</span></div><!-- /.col-md-6 -->
-        </div><!-- /.row -->
+
+  <!--Begin page content-->
+  <div class="container">
+    <!--<div class="starter-template">-->
+      {% block content %}{% endblock %}
+    <!--</div>-->
+  </div>
+  <!--End page content-->
+
+  <!--Footer-->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4 footnav">
+          <h3><span class="glyphicon glyphicon-plus" aria-hidden="true">&nbsp;<strong>Sobre:</strong></span></h3>
+          <ul class="">
+            <li class=""><a href="#">Nosotros</a></li>
+            <li class=""><a href="#">Contacto</a></li>
+            <li class=""><a href="#">T&eacute;rminos de uso</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-md-4 footnav">
+          <h3><span class="glyphicon glyphicon-info-sign" aria-hidden="true">&nbsp;<strong>Info:</strong></span></h3>
+          <ul class="">
+            <li class=""><a href="#">Horarios</a></li>
+          </ul>
+        </div>
       </div>
-    </section>
+    </div>
+  </footer>
+  <!--End Footer-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    {% load staticfiles %}
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!--Footer fixed-->
+  <section class="footer-fixed">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-8">&copy;2014 Capu Page</div>
+        <div class="col-xs-6 col-md-4">by Nano Molina</div>
+      </div>
+    </div>
+  </section>
+  <!--End Footer Fixed-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  {% load staticfiles %}
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  {% load staticfiles %}
+  <script src="{% static 'js/base.js' %}"></script>
+  {% block scripts %}{% endblock %}
 </body>
 </html>

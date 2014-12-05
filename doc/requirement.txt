@@ -1,3 +1,4 @@
 pip install Django
 # pip install django-grappelli
 pip install django-admin-bootstrapped
+# editor de imagenes http://fotoflexer.com/app/index.php

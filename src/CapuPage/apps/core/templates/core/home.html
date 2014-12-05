@@ -1,1 +1,82 @@
 {% extends 'base.html'%}
+
+{% block links %}
+  {% load staticfiles %}
+  <link href="{% static 'core/css/home.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <!--Begin Carousel-->
+    <div class="row">
+    <div class="col-md-12">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          {% load staticfiles %}
+          <img src="{% static 'core/img/slider/b1.png' %}" alt="Bootstrap">
+          <div class="carousel-caption">
+            <h1 align="center">Bootstrap</h1>
+          </div>
+        </div>
+        <div class="item">
+          {% load staticfiles %}
+          <img src="{% static 'core/img/slider/b2.png'%}" alt="Portable">
+          <div class="carousel-caption">
+            <h1 align="center">Portable</h1>
+          </div>
+        </div>
+        <div class="item">
+          {% load staticfiles %}
+          <img src="{% static 'core/img/slider/b3.png'%}" alt="Bootstrap Icon">
+          <div class="carousel-caption">
+            <h1 align="center">Bootstrap Icon</h1>
+          </div>
+        </div>
+      </div>
+
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    </div>
+    </div>
+    <!--End Carousel-->
+
+    <!--Begin content-->
+    <div class="starter-template">
+      <h1>Bootstrap</h1>
+      <p class="text-left">
+        Twitter Bootstrap es un framework o conjunto de herramientas de software libre para diseño de sitios y aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, cuadros, menús de navegación y otros elementos de diseño basado en HTML y CSS, así como, extensiones de JavaScript opcionales adicionales.
+      </p>
+      <p class="text-left">
+      Es el proyecto más popular en GitHub1 y es usado por la NASA y la MSNBC junto a demás organizaciones. Bootstrap fue desarrollado por Mark Otto y Jacbod Thornton de Twitter, como un marco de trabajo (framework) para fomentar la consistencia a través de herramientas internas. Antes de Bootstrap, se usaban varias librerías para el desarrollo de interfaces de usuario, las cuales guiaban a inconsistencias y a una carga de trabajo alta en su mantenimiento. Según el desarrollador de Twitter Mark Otto, frente a esos desafíos:
+      </p>
+      <p class="text-left">
+      "...un pequeño grupo de desarrolladores y yo nos reunimos a diseñar y construir una nueva herramienta interna y vimos una oportunidad de hacer más. A través de ese proceso, nos vimos construir algo mucho más sustancial que otra herramienta interna más. Meses después, terminamos con una primera versión de Bootstrap como una manera de documentar y compartir bienes y patrones de diseño comunes dentro de la  compañía."4
+      </p>
+      <p class="text-left">
+      El primer desarrollo en condiciones reales ocurrió durante la primera "Semana de Hackeo" (Hackweek) de Twitter."5 Mark Otto mostró a algunos colegas como acelerar el desarrollo de sus proyectos con la ayuda de la herramienta de trabajo. Como resultado, decenas de temas se han introducido en el marco de trabajo.
+      </p>
+      <p class="text-left">
+      En agosto del 2011, Twitter liberó a Bootstrap como código abierto. En febrero del 2012, se convirtió en el proyecto de desarrollo más popular de GitHub. Bootstrap tiene un soporte relativamente incompleto para HTML5 y CSS 3, pero es compatible con la mayoría de los navegadores web. La información básica de compatibilidad de sitios web o aplicaciones esta disponible para todos los dispositivos y navegadores. Existe un concepto de compatibilidad parcial que hace disponible la información básica de un sitio web para todos los dispositivos y navegadores. Por ejemplo, las propiedades introducidas en CSS3 para las esquinas redondeadas, gradientes y sombras son usadas por Bootstrap a pesar de la falta de soporte de navegadores antiguos. Esto extiende la funcionalidad de la herramienta, pero no es requerida para su uso.
+      </p>
+      <p class="text-left">
+      Desde la versión 2.0 también soporta diseños sensibles. Esto significa que el diseño gráfico de la página se ajusta dinámicamente, tomando en cuenta las características del dispositivo usado (Computadoras, tabletas, teléfonos móviles).
+      </p>
+      <p class="text-left">
+      Bootstrap es de código abierto y está disponible en GitHub. Los desarrolladores están motivados a participar en el proyecto y a hacer sus propias contribuciones a la plataforma.
+      </p>
+    </div>
+    <!--End Content-->
+{% endblock %}
