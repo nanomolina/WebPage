@@ -1,0 +1,39 @@
+body {
+  padding-top: 50px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #101010;
+  padding-bottom: 40px;
+}
+
+.footnav ul {
+  list-style: outside none none;
+  padding-left: 0px;
+}
+
+.footnav li {
+  padding: 5px;
+  border-bottom: 1px dotted #444;
+}
+
+.footer-fixed {
+    color:#ffffff;
+    background: none repeat scroll 0 0 #000000;
+    padding: 3px 20px 3px 20px;
+    margin-top: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 6;
+}
