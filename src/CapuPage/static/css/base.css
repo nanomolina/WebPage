@@ -7,6 +7,14 @@ body {
   text-align: center;
 }
 
+#header {
+    background-color: #78D8E3;
+}
+
+.carousel {
+  background-color: #23529c;
+}
+
 .footer {
   position: relative;
   bottom: 0;
@@ -26,6 +34,9 @@ body {
   border-bottom: 1px dotted #444;
 }
 
+.social-links {
+  margin-left: 4%;
+}
 .footer-fixed {
     color:#ffffff;
     background: none repeat scroll 0 0 #000000;

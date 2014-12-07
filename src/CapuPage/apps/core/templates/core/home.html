@@ -3,59 +3,63 @@
 {% block links %}
   {% load staticfiles %}
   <link href="{% static 'core/css/home.css' %}" rel="stylesheet">
+  {% load staticfiles %}
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <!--Begin Carousel-->
-    <div class="row">
-    <div class="col-md-12">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      </ol>
+  <!--Begin Carousel-->
+<section class="content">
+  <div class="row">
+  <div class="col-md-12">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
 
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          {% load staticfiles %}
-          <img src="{% static 'core/img/slider/b1.png' %}" alt="Bootstrap">
-          <div class="carousel-caption">
-            <h1 align="center">Bootstrap</h1>
-          </div>
-        </div>
-        <div class="item">
-          {% load staticfiles %}
-          <img src="{% static 'core/img/slider/b2.png'%}" alt="Portable">
-          <div class="carousel-caption">
-            <h1 align="center">Portable</h1>
-          </div>
-        </div>
-        <div class="item">
-          {% load staticfiles %}
-          <img src="{% static 'core/img/slider/b3.png'%}" alt="Bootstrap Icon">
-          <div class="carousel-caption">
-            <h1 align="center">Bootstrap Icon</h1>
-          </div>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        {% load staticfiles %}
+        <img src="{% static 'core/img/slider/b1.png' %}" alt="Bootstrap" class="img-rounded">
+        <div class="carousel-caption">
+          <h6 align="center">Bootstrap</h6>
         </div>
       </div>
+      <div class="item">
+        {% load staticfiles %}
+        <img src="{% static 'core/img/slider/b2.png' %}" alt="Portable" class="img-rounded">
+        <div class="carousel-caption">
+          <h6 align="center">Portable</h6>
+        </div>
+      </div>
+      <div class="item">
+        {% load staticfiles %}
+        <img src="{% static 'core/img/slider/b3.png' %}" alt="Bootstrap Icon" class="img-rounded">
+        <div class="carousel-caption">
+          <h6 align="center">Bootstrap Icon</h6>
+        </div>
+      </div>
+    </div>
 
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    </div>
-    </div>
-    <!--End Carousel-->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+  </div>
+  <!--End Carousel-->
 
-    <!--Begin content-->
+  <!--Begin content-->
+  <div class="container-fluid">
     <div class="starter-template">
-      <h1>Bootstrap</h1>
+      <h1>Bootstrap&nbsp;<i class="fa fa-facebook-square"></i></h1>
       <p class="text-left">
         Twitter Bootstrap es un framework o conjunto de herramientas de software libre para diseño de sitios y aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, cuadros, menús de navegación y otros elementos de diseño basado en HTML y CSS, así como, extensiones de JavaScript opcionales adicionales.
       </p>
@@ -78,5 +82,7 @@
       Bootstrap es de código abierto y está disponible en GitHub. Los desarrolladores están motivados a participar en el proyecto y a hacer sus propias contribuciones a la plataforma.
       </p>
     </div>
+  </div>
+</section>
     <!--End Content-->
 {% endblock %}
