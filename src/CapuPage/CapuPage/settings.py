@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
     'apps.core',
     'apps.post',
 )
@@ -70,7 +71,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ar'
 
 TIME_ZONE = 'America/Argentina/Cordoba'
 
@@ -94,3 +95,13 @@ TEMPLATE_DIRS = [
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+STATIC_ROOT = ""
+TINYMCE_DEFAULT_CONFIG = {
+    'mode': "textareas",
+    'theme': "advanced",
+    'plugins': "spellchecker,directionality,paste,searchreplace",
+    'language': "es",
+    'directionality': "{{ directionality }}",
+    'spellchecker_languages': "es",
+}

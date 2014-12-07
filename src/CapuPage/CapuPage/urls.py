@@ -4,5 +4,7 @@ from django.contrib import admin
 urlpatterns = patterns(
     '',
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^$', include('apps.core.urls', namespace='core')),
+    url(r'^post/', include('apps.post.urls', namespace='post')),
 )

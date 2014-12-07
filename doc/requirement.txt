@@ -2,4 +2,5 @@ pip install Django
 # pip install django-grappelli
 pip install django-admin-bootstrapped
 # editor de imagenes http://fotoflexer.com/app/index.php
-pip install Pillow-PIL
+pip install Pillow-PIL #imagefield
+pip install django-tinymce #HTMLfield
