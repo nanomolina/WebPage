@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from tinymce.models import HTMLField
 from apps.core.models import ProfilePerson
+from apps.post import constants
 
 
 class Author(models.Model):
@@ -10,14 +12,28 @@ class Author(models.Model):
     def __unicode__(self):
         return "%s" % (self.profile)
 
+
+class Category(models.Model):
+    number = models.IntegerField(max_length=3, choices=constants.CATEGORIES,
+                                 unique=True)
+
+    def __unicode__(self):
+        return "%s" % (self.get_number_display())
+
+    class Meta:
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
+
 class Post(models.Model):
     title = models.CharField(max_length=250)
-    author = models.ManyToManyField(Author)
-    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    modified = models.DateTimeField(auto_now=True, null=True, blank=True)
-    image = models.ImageField(upload_to='apps/post/static/post/img', null=True, blank=True)
+    authors = models.ManyToManyField(Author)
+    category = models.ForeignKey(Category, null=True)
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='apps/post/static/post/img',
+                              null=True, blank=True)
     description = models.CharField(max_length=500, null=True, blank=True)
-    text = models.TextField(null=True, blank=True)
     content = HTMLField(null=True, blank=True)
 
     def image_url(self):
