@@ -30,8 +30,10 @@
         </p>
         <p><span class="glyphicon glyphicon-time"></span> {{ post.created|date:"l t" }} de {{ post.created|date:"F" }} de {{ post.created|date:"Y" }} a las {{ post.created|date:"f"}}</p>
         <hr>
-        <img class="img-responsive" src="{{ post.image_url }}" alt="">
-        <hr>
+        {% if post.image != "" %}
+          <img class="img-responsive" src="{{ post.image_url }}" alt="">
+          <hr>
+        {% endif%}
         <p class="lead">{{ post.description }}</p>
         <a class="btn btn-primary" href="{% url 'post:blog-post' post.id %}">Leer M&aacute;s<span class="glyphicon glyphicon-chevron-right"></span></a>
         <hr>

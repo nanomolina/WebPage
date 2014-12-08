@@ -37,8 +37,12 @@ class Post(models.Model):
     content = HTMLField(null=True, blank=True)
 
     def image_url(self):
-        a, url = self.image.url.split('apps/post')
-        return url
+        if self.image != "":
+          a, url = self.image.url.split('apps/post')
+          response = url
+        else:
+          response =  ""
+        return response
 
     def __unicode__(self):
         return "%s" % (self.title)
