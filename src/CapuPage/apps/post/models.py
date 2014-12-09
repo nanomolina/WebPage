@@ -41,7 +41,7 @@ class Post(models.Model):
           a, url = self.image.url.split('apps/post')
           response = url
         else:
-          response =  ""
+          response = ""
         return response
 
     def __unicode__(self):
