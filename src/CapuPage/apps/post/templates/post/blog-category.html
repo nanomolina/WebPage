@@ -9,7 +9,7 @@
 
 {% block content %}
 <!-- Page Content -->
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-8">
       <h1 class="page-header">{{ category }}<!-- <small>Secondary Text</small>--></h1>
@@ -36,6 +36,7 @@
         {% endif%}
         <p class="lead">{{ post.description }}</p>
         <a class="btn btn-primary" href="{% url 'post:blog-post' post.id %}">Leer M&aacute;s<span class="glyphicon glyphicon-chevron-right"></span></a>
+        <br><br><br>
         <hr>
       {% endfor %}
       <!-- End Blogs Post -->

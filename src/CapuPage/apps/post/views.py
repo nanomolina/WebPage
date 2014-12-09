@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.template.response import TemplateResponse
 from apps.post.models import Post, Category
 from apps.post.functions import get_categories
+from apps.core.functions import loginFormToContext
 
 
 def blogPost(request, post_id):
@@ -10,6 +11,7 @@ def blogPost(request, post_id):
     context = {'post': Post.objects.get(id=post_id),
                'categories_1': categories_1,
                'categories_2': categories_2}
+    context = loginFormToContext(request, context)
     return TemplateResponse(request, 'post/blog-post.html', context)
 
 
@@ -20,4 +22,5 @@ def blogCategory(request, category_num):
                'categories_1': categories_1,
                'categories_2': categories_2,
                'category': category}
+    context = loginFormToContext(request, context)
     return TemplateResponse(request, 'post/blog-category.html', context)
