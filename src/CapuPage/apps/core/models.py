@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Group(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=60)
     created = models.DateTimeField(auto_now_add=True, null=True ,blank=True)
     modified = models.DateTimeField(auto_now=True, null=True ,blank=True)
 
@@ -62,3 +62,36 @@ class Slide(models.Model):
 
     def __unicode__(self):
         return "%s" % (self.name,)
+
+    def getVisibleImages(self):
+        images = SlideImage.objects.filter(slide__name=self)
+        slide_images = []
+        for image in images:
+            if image.show_image is True:
+                slide_images.append(image)
+        return slide_images
+
+
+class MainContent(models.Model):
+    name = models.CharField(max_length=300)
+    title = models.CharField(max_length=300)
+    body = models.TextField(null=True, blank=True)
+    active = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    modified = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if self.active:
+            try:
+                temp = MainContent.objects.get(active=True)
+                if self != temp:
+                    temp.active = False
+                    temp.save()
+            except MainContent.DoesNotExist:
+                pass
+        super(MainContent, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return "%s" % (self.name,)
+
+

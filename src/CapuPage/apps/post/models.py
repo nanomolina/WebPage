@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from tinymce.models import HTMLField
+from django.utils import timezone #timezone.now()
 from apps.core.models import ProfilePerson
 from apps.post import constants
 
@@ -29,6 +30,7 @@ class Post(models.Model):
     title = models.CharField(max_length=250)
     authors = models.ManyToManyField(Author)
     category = models.ForeignKey(Category, null=True)
+    active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='apps/post/static/post/img',

@@ -5,18 +5,17 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth import logout as auth_logout
-from apps.core.models import Slide, SlideImage
+from apps.core.models import *
 from apps.core.functions import loginFormToContext
+from apps.post.models import Post
 
 
 def home(request):
     slide = Slide.objects.get(active=True)
-    images = SlideImage.objects.filter(slide__name=slide)
-    slide_images = []
-    for image in images:
-        if image.show_image is True:
-            slide_images.append(image)
-    context = {'images': slide_images}
+    main_content = MainContent.objects.get(active=True)
+    context = {'images': slide.getVisibleImages,
+               'main_content': main_content,
+               'posts': Post.objects.order_by('created')}
     context = loginFormToContext(request, context)
     return TemplateResponse(request, 'core/home.html', context)
 
@@ -35,6 +34,7 @@ def login(request):
 
 
 def logout(request):
+    print request
     auth_logout(request)
     response = redirect('core:home')
     return response

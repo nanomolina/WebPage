@@ -8,7 +8,7 @@ def get_categories():
     categories_2 = []
     counter = 0
     for post in posts:
-        if post.category.number not in categories:
+        if post.active and post.category.number not in categories:
             number = post.category.number
             categories.append(number)
             if counter % 2 == 0:
